@@ -107,3 +107,19 @@ function eraseList() {
 }
   
 eraseButton.addEventListener('click', eraseList);
+//Alguns trechos foram retirado do código de Geovani Moura = https://github.com/tryber/sd-019-c-project-todo-list/pull/47/files
+
+//Requisito 11
+const finishButton = document.createElement('button');
+finishButton.setAttribute('id', 'remover-finalizados');
+finishButton.innerText = "Remover Finalizadas";
+footer.appendChild(finishButton);
+
+function eraseFinished() {
+    const finished = document.querySelectorAll('.completed');
+    for (let i = 0; i < finished.length; i += 1) {
+      finished[i].parentNode.removeChild(finished[i]);
+    }
+}
+
+finishButton.addEventListener('click', eraseFinished);
