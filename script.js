@@ -54,7 +54,7 @@ button.addEventListener('click', function () {
 //Já é feito automaticamente
 
 //Requisito 7
-function changeColor(event) {
+function linethrough(event) {
   for (let i = 0; i < document.querySelectorAll('.selected').length; i += 1) {
     document.querySelectorAll('.selected')[i].classList.remove('selected');
   }
@@ -62,4 +62,18 @@ function changeColor(event) {
   e.classList.add('selected');
 }
 
-list.addEventListener('click', changeColor);
+list.addEventListener('click', linethrough);
+//Trecho retirado do código de Geovani Moura = https://github.com/tryber/sd-019-c-project-todo-list/pull/47/files
+
+//Requisito 8
+//Já é feito automaticamente
+function lineThrough(event) {
+    const e = event.target;
+    if (e.classList.contains('completed') === false) {
+        e.classList.add('completed');
+    } else {
+        e.classList.remove('completed');
+    }
+}
+  
+list.addEventListener('dblclick', lineThrough);
