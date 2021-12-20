@@ -49,3 +49,17 @@ button.addEventListener('click', function () {
     list.appendChild(item);
     input.value = '';
 });
+
+//Requisito 6
+//Já é feito automaticamente
+
+//Requisito 7
+function changeColor(event) {
+  for (let i = 0; i < document.querySelectorAll('.selected').length; i += 1) {
+    document.querySelectorAll('.selected')[i].classList.remove('selected');
+  }
+  const e = event.target;
+  e.classList.add('selected');
+}
+
+list.addEventListener('click', changeColor);
