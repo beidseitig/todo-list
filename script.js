@@ -67,6 +67,8 @@ list.addEventListener('click', linethrough);
 
 //Requisito 8
 //Já é feito automaticamente
+
+//Requisito 9
 function lineThrough(event) {
     const e = event.target;
     if (e.classList.contains('completed') === false) {
@@ -77,3 +79,31 @@ function lineThrough(event) {
 }
   
 list.addEventListener('dblclick', lineThrough);
+
+//Requisito 10
+// let li = document.getElementsByClassName('itens');  
+
+// Apaga o primeiro da lista
+// eraseButton.addEventListener('click', function () {
+//    for (let i = 0; i < li.length; i +=1) {
+//        li[i].remove();
+//    }
+// });
+
+const footer = document.createElement('footer');
+footer.setAttribute('id', 'footer');
+document.body.appendChild(footer);
+
+const eraseButton = document.createElement('button');
+eraseButton.setAttribute('id', 'apaga-tudo');
+eraseButton.innerText = 'Apagar Tudo';
+footer.appendChild(eraseButton);
+
+function eraseList() {
+    const li = document.querySelectorAll('li');
+    for (let i = 0; i < li.length; i += 1) {
+      li[i].parentNode.removeChild(li[i]);
+    }
+}
+  
+eraseButton.addEventListener('click', eraseList);
