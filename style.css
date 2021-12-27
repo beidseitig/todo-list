@@ -1,7 +1,53 @@
-.selected {
+* {
+    margin: 5px;
+  }
+  
+  #criar-tarefa {
+    border: 1px solid black;
+    padding: 1px;
+    background-color: magenta;
+  }
+  
+  #apaga-tudo {
+    border: 1px solid black;
+    padding: 1px;
+    background-color: red;
+  }
+  
+  #remover-selecionado {
+    border: 1px solid black;
+    padding: 1px;
+    background-color: purple;
+  }
+  
+  #mover-baixo {
+    border: 1px solid black;
+    padding: 1px;
+    background-color: yellow;
+  }
+  
+  #mover-cima {
+    border: 1px solid black;
+    padding: 1px;
+    background-color: yellow;
+  }
+  
+  #remover-finalizados {
+    border: 1px solid black;
+    padding: 1px;
+    background-color: red;
+  }
+  
+  #salvar-tarefas {
+    border: 1px solid black;
+    padding: 1px;
+    background-color: green;
+  }
+  
+  .selected {
     background-color: gray;
-}
-
-.completed {
+  }
+  
+  .completed {
     text-decoration: line-through;
-}
+  }
