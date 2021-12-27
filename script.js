@@ -165,3 +165,23 @@ function goUp () {
 }
 
 upButton.addEventListener('click', goUp);
+
+const downButton = document.createElement('button');
+downButton.setAttribute('id', 'mover-baixo');
+downButton.innerText = 'Down';
+footer.appendChild(downButton);
+
+function goDown () {
+  const selectedItem = document.querySelector('.selected');
+  if (selectedItem !== null && selectedItem !== selectedItem.parentNode.lastElementChild) {
+    const next = selectedItem.nextElementSibling.innerText;
+    selectedItem.nextElementSibling.innerText = selectedItem.innerText;
+    selectedItem.innerText = next;
+    if (selectedItem.nextElementSibling.classList.contains('selected') === false) {
+      selectedItem.nextElementSibling.classList.add('selected');
+      selectedItem.classList.remove('selected')
+    }
+  }
+}
+
+downButton.addEventListener('click', goDown);
