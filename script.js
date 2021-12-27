@@ -133,7 +133,7 @@ footer.appendChild(saveButton);
 saveButton.addEventListener('click',function () {
   const saveList = document.querySelector('ol').innerHTML;
   localStorage.setItem('savedList', saveList);
-})
+});
 
 list.value = localStorage.getItem('savedList');
 
@@ -185,3 +185,15 @@ function goDown () {
 }
 
 downButton.addEventListener('click', goDown);
+//Trecho retirado do código de Geovani Moura = https://github.com/tryber/sd-019-c-project-todo-list/pull/47/files
+
+//Bonus 14
+const removeSelectedButton = document.createElement('button');
+removeSelectedButton.setAttribute('id', 'remover-selecionado');
+removeSelectedButton.innerText = 'Remover Selecionado';
+footer.appendChild(removeSelectedButton);
+
+removeSelectedButton.addEventListener('click', function () {
+  const removeItem = document.querySelector('.selected');
+  removeItem.parentNode.removeChild(removeItem);
+});
