@@ -123,3 +123,22 @@ function eraseFinished() {
 }
 
 finishButton.addEventListener('click', eraseFinished);
+
+//Bonus 12
+const saveButton = document.createElement('button');
+saveButton.setAttribute('id', 'salvar-tarefas');
+saveButton.innerText = 'Salvar Tarefas';
+footer.appendChild(saveButton);
+
+saveButton.addEventListener('click',function () {
+  const saveList = document.querySelector('ol').innerHTML;
+  localStorage.setItem('savedList', saveList);
+})
+
+list.value = localStorage.getItem('savedList');
+
+
+if (localStorage.getItem('savedList') !== null) {
+  const saveList = localStorage.getItem('savedList');
+  document.querySelector('ol').innerHTML = saveList;
+}
