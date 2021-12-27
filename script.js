@@ -142,3 +142,26 @@ if (localStorage.getItem('savedList') !== null) {
   const saveList = localStorage.getItem('savedList');
   document.querySelector('ol').innerHTML = saveList;
 }
+//Alguns trechos foram retirado do código de Geovani Moura = https://github.com/tryber/sd-019-c-project-todo-list/pull/47/files
+
+//Bonus 13
+const upButton = document.createElement('button');
+upButton.setAttribute('id', 'mover-cima');
+upButton.innerText = 'Up';
+footer.appendChild(upButton);
+
+function goUp () {
+  const selectedItem = document.querySelector('.selected');
+  if (selectedItem !== null && selectedItem !== selectedItem.parentNode.firstElementChild) {
+    const previous = selectedItem.previousElementSibling.innerText;
+    //Se usar a const 'previous' aqui a funcao não funciona, por isso tem de ser selectedItem.previousElementSibling.innerText
+    selectedItem.previousElementSibling.innerText = selectedItem.innerText;
+    selectedItem.innerText = previous;
+    if (selectedItem.previousElementSibling.classList.contains('selected') === false) {
+      selectedItem.previousElementSibling.classList.add('selected');
+      selectedItem.classList.remove('selected')
+    }
+  }
+}
+
+upButton.addEventListener('click', goUp);
